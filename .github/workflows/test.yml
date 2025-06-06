@@ -1,0 +1,37 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: '17'
+
+    - name: Download JUnit Console Launcher
+      run: |
+        curl -L -o junit-platform-console-standalone.jar \
+          https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/junit-platform-console-standalone-1.10.0.jar
+
+    - name: Compile source code
+      run: |
+        mkdir -p out
+        javac -cp junit-platform-console-standalone.jar -d out $(find . -name "*.java")
+
+    - name: Run JUnit tests
+      run: |
+        java -jar junit-platform-console-standalone.jar \
+          --class-path out \
+          --scan-classpath
