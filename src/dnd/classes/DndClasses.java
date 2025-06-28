@@ -4,12 +4,14 @@ import java.util.Arrays;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import dnd.BodyType;
 import dnd.Player;
 import dnd.Race;
 import sources.equipment.ArmorTypes;
 import sources.equipment.WeaponTypes;
 
-public class DndClasses extends Player {
+public abstract class DndClasses extends Player {
+
     private ArmorTypes[] armorProficiencies;
     private WeaponTypes[] weaponProficiencies;
 
@@ -20,8 +22,8 @@ public class DndClasses extends Player {
      * @param level level of the player
      * @param race  of the player
      */
-    public DndClasses(String name, Race race) {
-        super(name, race);
+    public DndClasses(String name, BodyType bodyType, Race race) {
+        super(name, bodyType, race);
     }
 
     protected void setArmorProficiencies(ArmorTypes[] armorProficiencies) {

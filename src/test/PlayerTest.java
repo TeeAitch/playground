@@ -6,8 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import dnd.BodyType;
 import dnd.Player;
 import dnd.Race;
+import dnd.classes.Fighter;
 import exceptions.LevelToHighException;
 
 public class PlayerTest {
@@ -15,12 +17,12 @@ public class PlayerTest {
 
     @BeforeAll
     static void setup() {
-        p = new Player("TestPlayer", Race.HUMAN);
+        p = new Fighter("TestPlayer", BodyType.ONE, Race.HUMAN);
     }
 
     @Test
     public void playerLevelShouldBeOneByCreation() {
-        Player playerLevelOne = new Player("LevelOne", Race.HUMAN);
+        Player playerLevelOne = new Fighter("TestPlayer", BodyType.ONE, Race.HUMAN);
         assertEquals(1, playerLevelOne.getLevel());
     }
 

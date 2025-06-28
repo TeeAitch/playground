@@ -1,3 +1,4 @@
+import dnd.BodyType;
 import dnd.Player;
 import dnd.Race;
 import dnd.classes.Fighter;
@@ -6,9 +7,9 @@ import exceptions.LevelToHighException;
 
 public class App {
     public static void main(String[] args) {
-        Player p1 = new Fighter("Pears", Race.HUMAN);
-        Player p2 = new Fighter("Darion", Race.DWARF);
-        Player p3 = new Ranger("Valon", Race.ELF);
+        Player p1 = new Fighter("Pears", BodyType.ONE, Race.HUMAN);
+        Player p2 = new Fighter("Darion", BodyType.THREE, Race.DWARF);
+        Player p3 = new Ranger("Valon", BodyType.TWO, Race.ELF);
         try {
             p1.setLevel(2);
             p3.setLevel(4);

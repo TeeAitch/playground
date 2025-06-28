@@ -1,18 +1,29 @@
-## Getting Started
+# DND Class Creation
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### About the Project
 
-## Folder Structure
+This project is a focused learning exercise aimed at deepening my understanding of core Java principles. Its primary objective is to provide hands-on experience with object-oriented programming (OOP) by applying key concepts in a practical and engaging context designing character classes for a Dungeons & Dragons (DND)-inspired system.
 
-The workspace contains two folders by default, where:
+Specifically, the project explores the four fundamental pillars of OOP in Java:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+* Inheritance – Sharing functionality between classes and establishing parent-child relationships.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+* Polymorphism – Implementing flexibility through method overriding and dynamic method dispatch.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+* Encapsulation – Protecting internal object states using access modifiers and getters/setters.
 
-## Dependency Management
+* Abstraction – Defining abstract classes and interfaces to separate behavior from implementation.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+In addition to applying OOP concepts, this project also emphasizes testing and documentation:
+
+* Unit Testing with JUnit – Core functionalities are tested using JUnit to ensure correctness and reliability.
+
+* Documentation with Javadoc – Each class and method is documented using standard Javadoc comments, enabling clear and maintainable code.
+
+By building this project, I aim to solidify my theoretical understanding and improve my ability to write clean, modular, testable, and well-documented Java code.
+
+## Author
+
+This project is maintained by Tolga Han
+
+Feel free to reach out if you have questions or suggestions.

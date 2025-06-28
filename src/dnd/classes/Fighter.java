@@ -1,5 +1,6 @@
 package dnd.classes;
 
+import dnd.BodyType;
 import dnd.Race;
 import sources.equipment.ArmorTypes;
 import sources.equipment.WeaponTypes;
@@ -19,8 +20,8 @@ public class Fighter extends DndClasses {
      * @param level level of the player
      * @param race  of the player
      */
-    public Fighter(String name, Race race) {
-        super(name, race);
+    public Fighter(String name, BodyType bodyType, Race race) {
+        super(name, bodyType, race);
         setArmorProficiencies(new ArmorTypes[] {
                 ArmorTypes.LIGHT,
                 ArmorTypes.MEDIUM,
@@ -49,11 +50,11 @@ public class Fighter extends DndClasses {
      */
     @Override
     public String toString() {
-        return super.toString()
-                + " the player class is "
-                + getClass().getSimpleName()
-                + " his Armor Proficiencys are: \n"
-                + getArmorProficiencies() + "\nand weapon proficiencys are: \n"
-                + getWeaponProficiencies();
+        return super.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }

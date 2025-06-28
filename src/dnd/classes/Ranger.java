@@ -1,5 +1,6 @@
 package dnd.classes;
 
+import dnd.BodyType;
 import dnd.Race;
 import sources.equipment.ArmorTypes;
 import sources.equipment.WeaponTypes;
@@ -14,8 +15,8 @@ public class Ranger extends DndClasses {
      * @param level level of the player
      * @param race  of the player
      */
-    public Ranger(String name, Race race) {
-        super(name, race);
+    public Ranger(String name, BodyType bodyType, Race race) {
+        super(name, bodyType, race);
         setArmorProficiencies(new ArmorTypes[] {
                 ArmorTypes.LIGHT,
                 ArmorTypes.MEDIUM,

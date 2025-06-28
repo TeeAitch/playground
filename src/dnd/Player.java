@@ -9,14 +9,19 @@ import exceptions.LevelToHighException;
  * it holds data like name, level, race and Methods
  * to access the data
  */
-public class Player {
-    public final int MAX_LEVEL = 20;
-    private String name;
-    private int hitPoints;
-    private int level;
-    private Race race;
-    private static int getCurrentPlayers = 0;
-    Random rnd = new Random();
+public abstract class Player {
+
+    private final int MAX_LEVEL = 20;
+    private final int STARTING_LEVEL = 1;
+    private final int MIN_HP = 10;
+    private final int MAX_HP = 24;
+    protected static int getCurrentPlayers = 0;
+    protected String name;
+    protected BodyType bodyType;
+    protected int level;
+    protected int hitPoints;
+    protected Race race;
+    private Random rnd = new Random();
 
     /**
      * Creates a new Player with name, level and race
@@ -26,11 +31,12 @@ public class Player {
      * @param level the current level of the player
      * @param race  the race of the player
      */
-    public Player(String name, Race race) {
+    public Player(String name, BodyType bodyType, Race race) {
         this.name = name;
-        this.level = 1;
-        this.hitPoints = rnd.nextInt(10, 24);
+        this.level = STARTING_LEVEL;
+        this.hitPoints = rnd.nextInt(MIN_HP, MAX_HP);
         this.race = race;
+        this.bodyType = bodyType;
         getCurrentPlayers++;
     }
 
@@ -70,6 +76,20 @@ public class Player {
         return this.race;
     }
 
+    /**
+     * Returns the body type of the player
+     * 
+     * @return the player body type
+     */
+    public BodyType getBodyType() {
+        return this.bodyType;
+    }
+
+    /**
+     * Gets the current Instances of the player class
+     * 
+     * @return player instances
+     */
     public static int getCurrentPlayers() {
         return getCurrentPlayers;
     }
@@ -92,5 +112,19 @@ public class Player {
                 + " is Level " + this.level
                 + " has " + this.hitPoints + " HitPoints "
                 + "and is a " + this.race.getString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || getClass() != obj.getClass())
+            return false;
+
+        Player other = (Player) obj;
+        return this.level == other.level &&
+                this.name.equals(other.name) &&
+                this.race == other.race &&
+                this.bodyType == other.bodyType;
     }
 }

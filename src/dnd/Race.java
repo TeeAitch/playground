@@ -11,7 +11,7 @@ public enum Race {
     HALFLING("Halfling"),
     GOLIATH("Goliath");
 
-    public final String race;
+    private final String race;
 
     Race(String race) {
         this.race = race;
